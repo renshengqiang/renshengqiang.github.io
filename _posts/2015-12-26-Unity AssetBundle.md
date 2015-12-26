@@ -1,7 +1,7 @@
 ---
 layout: post
 author: tnqiang
-titile: #Unity AssetBundle
+titile: Unity AssetBundle
 category: Unity
 tag: Unity
 ---
