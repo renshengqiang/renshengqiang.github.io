@@ -7,7 +7,7 @@ tag: Unity
 ---
 ##基本概念
 
-1. Animation
+###Animation
 Animation是一种关键帧信息的集合。
 例如 Tranform 动画的一个例子如下：
 
@@ -17,18 +17,20 @@ Animation是一种关键帧信息的集合。
 	{Keyframe2(time2,  (node1.translation2, node2.translation2 ))},
 	...
 }
+
 {% endhighlight %}
 
 其中每个关键帧记录了当前关键帧的**动画时间**和动画涉及到的**每个节点的当前帧位移**，动画的过程中会根据当前时间找到每个节点的偏移，对 GameObject 的 Transform 进行改变。
 
 例如当前的动画时间是time, r = (time - time1)/(time2 - time1)，则插值结果：
 
-node1 节点的动画偏移是：(1-r)*node1.translation1 + r*node1.translation2;
-node2节点的动画偏移是：(1-r)*node2.translation1 + r*node2.translation2。
+- node1 节点的动画偏移：(1-r)*node1.translation1 + r*node1.translation2;
+
+- node2 节点的动画偏移：(1-r)*node2.translation1 + r*node2.translation2。
 
 整个动画执行的过程就是根据当前的动画和动画时间进行插值的过程。Unity中使用 .anim 文件来保存这些动画关键帧信息。
 
-2. 动画种类
+###动画种类
 
 	- 节点动画
 	这种类型的动画比较常见于 UI 动画中，它的特点是：动画的关键帧直接控制的是我们想要动画的对象。
@@ -37,14 +39,14 @@ node2节点的动画偏移是：(1-r)*node2.translation1 + r*node2.translation2�
 	
 	Unity 中进行了一层封装，用户看到的只是 Animation，当然我们也不需要关心。
 	
-3. Animation Clip
+###Animation Clip
 	Unity 中的一个概念，表示动画当中的一个片段。当美术将所有的动画都做在一个anim 中的时候，我们需要对这个 anim 进行切分成一个个的 Animation Clip 用于动画控制。
 	
-4. Animation Component
+###Animation Component
 ![](https://raw.githubusercontent.com/renshengqiang/renshengqiang.github.io/master/images/UnityAnimation/animationComponent.png)
 Animation 组件是用来对 Unity 中的 Animation Clip 进行简单封装的一个功能组件，用于播放动画。当设置了 Play Autiomatically 选项后，Animation 字段对应的动画片段会自动播放。
 
-5. Animator
+###Animator
 Animator 是 Unity 对 Animation Clip 进行的较高层级封装的一个功能组件，引入状态机的概念来进行动画控制，便于具有复杂功能的动画切换的实现。
 ![](https://raw.githubusercontent.com/renshengqiang/renshengqiang.github.io/master/images/UnityAnimation/animationStateMachine.png)
 Animator 中将每个状态抽象成一个 Animation State，一个 Animation State 是一个<AnimationClip, 转换条件1， 转换条件2 ...>的一个多元组。
@@ -53,7 +55,7 @@ Animator 中将每个状态抽象成一个 Animation State，一个 Animation St
 Animator 的状态切换API叫做：Animator.SetXXX("param", value)
 ![](https://raw.githubusercontent.com/renshengqiang/renshengqiang.github.io/master/images/UnityAnimation/animator.png)
 
-6. Avator
+###Avator
 游戏中人形结构的游戏体特别常见，因此 Unity 对人形的骨骼结构定义了一套骨骼结构。
 当模型导入的时候，Unity 会尝试将模型中的骨骼节点和 avatar 节点进行一个对应，这个对应关系就是一个 avatar。有了这个 avatar，其他模型的动作也可以用到这个模型中。
 
