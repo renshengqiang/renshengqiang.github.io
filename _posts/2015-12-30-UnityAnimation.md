@@ -1,6 +1,6 @@
 ---
 layout: post
-author: other
+author: tnqiang
 titile: Unity 动画基础
 category: Unity
 tag: Unity
@@ -19,8 +19,10 @@ Animation是一种关键帧信息的集合。
 }
 {% endhighlight %}
 
-其中每个关键帧记录了当前关键帧的**动画时间**和动画涉及到的**每个节点的当前帧位移**，动画的过程中会根据当前时间找到每个节点的偏移，对 GameObject 的Transform 进行改变。
+其中每个关键帧记录了当前关键帧的**动画时间**和动画涉及到的**每个节点的当前帧位移**，动画的过程中会根据当前时间找到每个节点的偏移，对 GameObject 的 Transform 进行改变。
+
 例如当前的动画时间是time, r = (time - time1)/(time2 - time1)，则插值结果：
+
 node1 节点的动画偏移是：(1-r)*node1.translation1 + r*node1.translation2;
 node2节点的动画偏移是：(1-r)*node2.translation1 + r*node2.translation2。
 
