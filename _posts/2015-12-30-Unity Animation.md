@@ -32,15 +32,15 @@ Animation是一种关键帧信息的集合。
 
 ###动画种类
 
-	- 节点动画
-	这种类型的动画比较常见于 UI 动画中，它的特点是：动画的关键帧直接控制的是我们想要动画的对象。
-	- 骨骼（蒙皮）动画
-	这种动画比较常见于三维角色动画，它的特点是：动画的关键帧控制的是骨骼节点的偏移等，蒙皮节点受骨骼节点影响而进行动画。因此动画是间接控制我们想要的对象的。
+- 节点动画
+这种类型的动画比较常见于 UI 动画中，它的特点是：动画的关键帧直接控制的是我们想要动画的对象。
+- 骨骼（蒙皮）动画
+这种动画比较常见于三维角色动画，它的特点是：动画的关键帧控制的是骨骼节点的偏移等，蒙皮节点受骨骼节点影响而进行动画。因此动画是间接控制我们想要的对象的。
 	
-	Unity 中进行了一层封装，用户看到的只是 Animation，当然我们也不需要关心。
+Unity 中进行了一层封装，用户看到的只是 Animation，当然我们也不需要关心。
 	
 ###Animation Clip
-	Unity 中的一个概念，表示动画当中的一个片段。当美术将所有的动画都做在一个anim 中的时候，我们需要对这个 anim 进行切分成一个个的 Animation Clip 用于动画控制。
+Unity 中的一个概念，表示动画当中的一个片段。当美术将所有的动画都做在一个anim 中的时候，我们需要对这个 anim 进行切分成一个个的 Animation Clip 用于动画控制。
 	
 ###Animation Component
 ![](https://raw.githubusercontent.com/renshengqiang/renshengqiang.github.io/master/images/UnityAnimation/animationComponent.png)
